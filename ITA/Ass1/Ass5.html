@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <style>
+        .content {
+            display: none;
+        }
+
+        .hello:checked~.content {
+            opacity: 1;
+            display: block;
+        }
+    </style>
+    <script>
+        function func() {
+                var win = window.open();
+                if(document.getElementById("1").checked){
+                    win.document.write("Annual Fest");
+                }
+                if(document.getElementById("2").checked){
+                    win.document.write("Drishti events");
+                }
+
+                if(document.getElementById("3").checked){
+                    win.document.write("Student Chapters");
+                }
+                if(document.getElementById("4").checked){
+                    win.document.write("STTP");
+                }
+                if(document.getElementById("5").checked){
+                    win.document.write("Summer Schools");
+                }
+                if(document.getElementById("6").checked){
+                    win.document.write("Talks");
+                }
+                if(document.getElementById("7").checked){
+                    win.document.write("Conferences");
+                }
+                if(document.getElementById("8").checked){
+                    win.document.write("Workshops");
+                }
+                if(document.getElementById("9").checked){
+                    win.document.write("Courses through NPTEL");
+                }
+        }
+    </script>
+</head>
+
+
+<body>
+    <form action="#">
+        <label>Newsletter</label>
+        <input type="checkbox" class="hello">
+        <div class="content">
+            <label for="">Annual Fest</label>
+            <input type="checkbox" id="1"> 
+            <label for="">Drishti Events</label>
+            <input type="checkbox" id="2"> 
+            <label for="">Student Chapters</label>
+            <input type="checkbox" id="3"> 
+            <label for="">STTP</label>
+            <input type="checkbox" id="4"> 
+            <label for="">Summer Schools</label>
+            <input type="checkbox" id="5"> 
+            <label for="">Talks</label>
+            <input type="checkbox" id="6"> 
+            <label for="">Conferences</label>
+            <input type="checkbox" id="7"> 
+            <label for="">Workshops</label>
+            <input type="checkbox" id="8"> 
+            <label for="">Courses through NPTEL</label>
+            <input type="checkbox" id="9"> 
+            
+        <div>
+            <button onclick="func()">Submit</button>
+        </div>
+        </div>
+
+    </form>
+</body>
+
+</html>

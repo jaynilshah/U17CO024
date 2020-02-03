@@ -1,0 +1,22 @@
+<html>
+    <head>
+	<title>Web App for Simple Interest Calculation</title>
+
+        <script>
+            const getQueryParams = ( params, url ) => {
+  
+  let href = url;
+  //this expression is to get the query strings
+  let reg = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
+  let queryString = reg.exec(href);
+  return queryString ? queryString[1] : null;
+};
+     
+            document.write(getQueryParams('ans',window.location));
+        </script>
+    </head>
+
+    <body>
+        <p class="res"></p>
+    </body>
+</html>
