@@ -22,8 +22,36 @@ void dda(float x1,float y1, float x0, float y0){
     }
 }
 
-int bresenham(int x1, int y1, int x0, int y0) {
-    return 0;
+void bresenham(int x1, int y1, int x0, int y0) {
+ 
+int dx, dy, p, x, y;
+ 
+	dx=x1-x0;
+	dy=y1-y0;
+ 
+	x=x0;
+	y=y0;
+ 
+	p=2*dy-dx;
+ 
+	while(x<x1)
+	{
+		if(p>=0)
+		{
+			putpixel(x,y,7);
+			y=y+1;
+			p=p+2*dy-2*dx;
+			delay(50);
+		}
+		else
+		{
+			putpixel(x,y,7);
+			p=p+2*dy;
+			delay(50);
+		}
+		x=x+1;
+	}
+
 }
 
 int main()
@@ -49,7 +77,9 @@ int main()
         }
         puts("Scan completed");
         if(c==1){
-
+            bresenham(x[0],y[0],x[1],y[1]);
+            bresenham(x[1],y[1],x[2],y[2]);
+            bresenham(x[2],y[2],x[0],y[0]);   
         }
         else
         {
