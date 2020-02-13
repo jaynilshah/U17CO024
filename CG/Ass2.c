@@ -19,7 +19,7 @@ void dda(float x1, float y1, float x0, float y0)
     float y = y0;
     for (i = 0; i <= steps; i++)
     {
-        putpixel((int)(x), (int)(y), WHITE);
+        putpixel((int)(x), (int)(y), RED);
         x += xinc;
         y += yinc;
     }
