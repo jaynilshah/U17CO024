@@ -16,6 +16,6 @@ int yywrap(){}
 int main()
 {
 	yylex();
-	printf(" Vowels : %d Consonants is : %d",cnt, cnt2);
+	printf("Vowels : %d Consonants is : %d \n",cnt, cnt2);
 	return 0;
 }

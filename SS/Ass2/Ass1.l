@@ -5,7 +5,7 @@ int consta =0;
 int key = 0;
 %}
 identif [_a-zA-Z][_a-zA-Z0-9]{0,30}
-consta [0-9]+
+consta ([+]|[-])?[0-9]+([.][0-9]+)?
 keyword  "float"|"int"|"long"|"short"|"double"
 dead .*
 %%
@@ -18,6 +18,8 @@ dead .*
 int yywrap(){}
 int main()
 {
+	extern FILE *yyin;
+	yyin = fopen("Input.c","r");
 	yylex();
 	return 0;
 }

@@ -21,10 +21,6 @@ int main()
 	printf("Count of chars %d", cnt_char);
 	printf("\nCount of words %d", cnt_word);
 	printf("\nCount of spaces %d", cnt_space);
-	printf("\nCount of EOLs %d", cnt_eol);
+	printf("\nCount of EOLs %d\n", cnt_eol);
 	return 0;
 }
-
-
-
-
