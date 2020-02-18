@@ -12,7 +12,6 @@ public class ST4 {
         // creates instance of JFrame 
         JFrame frame1 = new JFrame(); 
         JTextField tf = new JTextField();
-
   
         JButton _1 = new JButton("1"); 
         JButton _2 = new JButton("2"); 
@@ -49,7 +48,12 @@ public class ST4 {
         JButton _cosh = new JButton("cosh");
         JButton _tanh = new JButton("tanh");
         JButton _log10 = new JButton("log10");
-        JButton _nfact = new JButton("n!"); 
+        JButton _nfact = new JButton("n!");
+        
+        JButton _del = new JButton("DEL");
+        JButton _clr = new JButton("CLR");
+        JButton _ans = new JButton("ANS");
+        JButton _exit = new JButton("EXIT");
         
 
         frame1.add(_xsquare);   
@@ -96,6 +100,14 @@ public class ST4 {
         _log10.setBounds(300 + 300 + 30,350, 60 + 10, 30);
         _nfact.setBounds(300 + 300 + 30,350, 60 + 10, 30);
 
+
+
+
+        _del.setBounds(300 + 300 + 80  + 30,400, 60 + 10, 30); 
+        _clr.setBounds(300 + 300 + 30 + 80,250, 60 + 10, 30);
+        _ans.setBounds(300 + 300 + 30 + 80,300, 60 + 10, 30);
+        _exit.setBounds(300 + 300 + 30 + 80,350, 60 + 10, 30);
+
         // x axis, y axis, width, height 
 
         _1.setBounds(90, 350, 60, 30); 
@@ -131,6 +143,11 @@ public class ST4 {
         frame1.add(_plus);   
         frame1.add(_minus);
         frame1.add(_star);
+
+        frame1.add(_del);
+        frame1.add(_clr);
+        frame1.add(_ans);
+        frame1.add(_exit);
          
 
         
@@ -199,7 +216,95 @@ public class ST4 {
                 tf.setText(tf.getText()+ "0");
             }
         });
+        _plusm.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(tf.getText()+ " - ");
+            }
+        });
+        _slash.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(tf.getText()+ " / ");
+            }
+        });
+        _plus.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(tf.getText()+ " + ");
+            }
+        });
+        _dot.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(tf.getText()+ ".");
+            }
+        });
+        _minus.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(tf.getText()+ " - ");
+            }
+        });
+        _star.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(tf.getText()+ " * ");
+            }
+        });
+        // _0.addActionListener(new ActionListener(){
+        //     @Override
+        //     public void actionPerformed(ActionEvent e){
+        //         tf.setText(tf.getText()+ "0");
+        //     }
+        // });
+        // _0.addActionListener(new ActionListener(){
+        //     @Override
+        //     public void actionPerformed(ActionEvent e){
+        //         tf.setText(tf.getText()+ "0");
+        //     }
+        // });
+        // _0.addActionListener(new ActionListener(){
+        //     @Override
+        //     public void actionPerformed(ActionEvent e){
+        //         tf.setText(tf.getText()+ "0");
+        //     }
+        // });
+        // _0.addActionListener(new ActionListener(){
+        //     @Override
+        //     public void actionPerformed(ActionEvent e){
+        //         tf.setText(tf.getText()+ "0");
+        //     }
+        // });
 
-   
+
+
+
+
+        _ans.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(EvaluateString.evaluate(tf.getText()));
+            }
+        });
+        _clr.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText("");
+            }
+        });
+        _del.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tf.setText(tf.getText().substring(0,tf.getText().length()-1));
+            }
+        });
+        _exit.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                frame1.dispatchEvent(new WindowEvent(frame1, WindowEvent.WINDOW_CLOSING));
+            }
+        });
+
     }
 }
