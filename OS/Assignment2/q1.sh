@@ -1,4 +1,4 @@
-hr=`who | cut -c 34-35`
+hr=`who | cut -c 39-40`
 user=`whoami`
 
 if [ $hr -ge 7 ] && [ $hr -lt 12 ]

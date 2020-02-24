@@ -1,4 +1,4 @@
-if   [ -d "$1" ]
+if  [ -d "$1" ]
 then echo "$1 is a directory";
 
 elif [ -c "$1" ]

@@ -7,11 +7,10 @@ then
 		if [ -d $file ]
 		then
 			cd $file
-			for i in *
-			do
-				ex=$(ls -l | grep -v '^d' | grep '.exe' | wc -l)
+			# echo $file
+			ex=$(ls -l | grep -v '^d' | grep '.exe' | wc -l)
 				cnt=`expr $cnt + $ex`
-			done
+				# echo $ex
 			cd '..'
 		fi
 	done
